@@ -1,0 +1,169 @@
+                           tk92
+
+             Copyright 2001, 2002, Bob Parnass
+                      2350 Douglas Rd
+                 Oswego, IL 60543-9794 USA
+                      http://parnass.org
+
+tk92 is open source software designed for Radio Shack PRO-92
+and PRO-2067 scanner radios.
+
+I implemented tk92 in the Tcl/Tk scripting language which
+enables it to run on a variety of operating systems,
+including Linux, MacOS X, BSD, Solaris, Unix, Microsoft
+Windows (95 and later), etc.
+
+The free Tcl/Tk interpreter software must be installed
+on your computer prior to using tk92.
+
+Installation instructions may be found on the web at
+http://parnass.org
+
+
+
+                          Notes
+
+
+The Linux version of tk92 presumes the wish windowing shell
+is in your PATH.
+
+
+                          License
+
+tk92 is neither shareware nor in the public domain.  It is
+a copyrighted work; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+tk92 is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See
+the GNU General Public License for more details.
+
+You should have received a file named "COPYING" which
+contains a copy of the GNU General Public License along with
+tk92; if not, write to the Free Software Foundation, Inc.,
+59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+
+
+                      Acknowledgments
+
+Thanks to Ken Plotkin and Bill Petrowski for their initial
+work documenting the memory image, and Steve Falco for
+writing Linux command line cloning software.
+
+Some of the Tcl/Tk procedures used in tk92 were devised by
+other authors and their contributions are marked accordingly
+within the source code.
+
+Greg Shepherd, Ryan Schave, and Frank Monroe helped test tk92
+on Windows.
+
+
+                     Bob Parnass, AJ9S
+                     December 15, 2002
+
+
+
+COMPUTER INTERFACE ADAPTOR
+
+Obtain the proper TTL-to-RS232 adapter for mating the
+computer to the receiver.  Do not use a direct connect cable
+because it will not work and could damage both the computer
+and radio.
+
+Use the Radio menu to identify which type of adapter cable
+you have connected.
+
+If your cable is not listed among the choices, try using
+each choice until the program can read from the radio
+and write to it successfully.
+
+USAGE NOTES
+
+In general, it's a good idea to connect the computer and radio
+while the power to both is off.  It's inconvenient to turn the PC
+off and on just to disconnect the radio so I use a serial port
+switch box which connects my PC's serial port to one of four
+devices and merely switch the radio in and out of the line.
+
+If you are running Windows, you must reboot your PC
+after downloading and installing the software on your computer,
+
+When you first start the program, you will asked to identify
+which serial port is connected to the radio. (If you ever
+relocate the radio to a different serial port,
+you should remove the tk92.ini file and restart tk92.
+tk92 will recreate the tk92.ini file for you).
+
+Once you've identified the proper serial port,
+tk92 will open a couple of windows and display what
+looks like a few forms.
+
+Important: Before trying to reprogram your radio, you should first
+read the image from your radio using the
+
+Radio --> Read from radio...
+
+menus and save it in a file using the
+
+File --> Save As...
+
+menus.  You can name it something like "original.spg".
+Back up this file.
+
+You can then export the memory channel information to
+a .csv file, using the File --> Export memory channels menu.
+Exit tk92.
+
+You can use a text editor or spreadsheet
+program to change or pretty-print the data in the .csv file.
+Just be sure to write the data out in .csv format again.
+
+You can restart tk92 and read the memory image file
+(original.spg or whatever you named it) you created earlier,
+using the File --> Open menus.
+
+You can then view and change any of the settings.
+If you have changed any of the memory channel data
+in the .csv file, import it into tk92 using the
+File --> Import memory channels menu.
+
+You can check for errors in the data by using the
+Data --> Validate menu.
+
+If there are no errors, you should write the information
+to a new image file (file name ends in .spg) using the
+File --> Save As menu.
+
+You can now program your radio using the
+Radio --> Write to radio menu.
+
+Note:  You cannot both read from and write to the radio
+during the same tk92 session.
+
+
+
+
+IMPORTING A FREQUENCY LIST FROM A .CSV FILE
+
+Start the program.
+
+Read in an image file (.spg extension) using
+
+File -> Open
+
+Import the memory channel information from
+your .csv file using:
+
+File -->  Import Memory Channels
+
+
+Save the updated image in a new .spg file using
+File --> Save As ...
+
+Write the new image to the radio using
+
+Radio --> Write to radio
+
